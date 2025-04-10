@@ -3,29 +3,29 @@ import { Button, Input } from 'ant-design-vue'
 import { FacebookOutlined, GoogleOutlined, LeftOutlined } from '@ant-design/icons-vue'
 import { RouterLink } from 'vue-router'
 import InputCustom from '@/components/InputCustom.vue'
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 import router from '@/router'
 
-const object = ref({
+const object = reactive({
   fullName: '',
   email: '',
   password: '',
 })
 
 const register = () => {
-  console.log(object.value)
-  if (object.value.fullName === '' || object.value.email === '' || object.value.password === '') {
+  console.log(object)
+  if (object.fullName === '' || object.email === '' || object.password === '') {
     alert('Vui lòng nhập đầy đủ thông tin!')
     return
   } else {
     const data = {
-      name: object.value.fullName,
-      email: object.value.email,
-      password: object.value.password,
+      name: object.fullName,
+      email: object.email,
+      password: object.password,
     }
     localStorage.setItem('Data', JSON.stringify(data))
 
-    router.push('/login2')
+    router.push('/login')
   }
 }
 </script>
@@ -48,7 +48,7 @@ const register = () => {
           </RouterLink>
         </div>
         <p class="text-gray-200">
-          Already have an account? <RouterLink to="/login2">Login</RouterLink>
+          Already have an account? <RouterLink to="/login">Login</RouterLink>
         </p>
         <InputCustom
           v-model="object.fullName"
@@ -89,7 +89,7 @@ const register = () => {
 
 <style scoped>
 .ant-input {
-  background-color: #3c364c;
+  background-color: #3c364c !important;
 }
 
 .ant-input::placeholder {

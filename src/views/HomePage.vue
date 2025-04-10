@@ -1,9 +1,9 @@
 <script setup>
+import Footer from './Footer.vue'
 import Header from './Header.vue'
 </script>
 
 <template>
   <Header />
-  <main></main>
-  <footer></footer>
+  <Footer />
 </template>

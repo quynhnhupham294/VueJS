@@ -31,3 +31,13 @@ const props = defineProps({
     @input="$emit('update:modelValue', $event.target.value)"
   />
 </template>
+
+<style scoped>
+.input.ant-input {
+  background-color: #3c364c !important;
+}
+
+.ant-input::placeholder {
+  color: #fff !important;
+}
+</style>
