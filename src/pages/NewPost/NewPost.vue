@@ -1,6 +1,6 @@
 <script setup>
+import Header from '@/views/HomeTemplate/components/Header.vue'
 import { reactive } from 'vue'
-import Header from './Header.vue'
 
 const emit = defineEmits(['add-post'])
 

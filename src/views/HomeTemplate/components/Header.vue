@@ -25,7 +25,7 @@ console.log(props)
           <RouterLink to="/category">Danh mục</RouterLink>
         </li>
         <li>
-          <RouterLink to="/postDetail">Chi tiết sản phẩm</RouterLink>
+          <!-- <RouterLink to="/postDetail">Chi tiết sản phẩm</RouterLink> -->
         </li>
         <li>
           <RouterLink to="/post">Đăng bài</RouterLink>
