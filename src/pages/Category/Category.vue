@@ -1,13 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-
-import img1 from './../../assets/img/img01.png'
-import img2 from './../../assets/img/img02.png'
-import img3 from './../../assets/img/img03.png'
-
 import { items } from '@/Utils/post'
-import Header from '@/views/HomeTemplate/components/Header.vue'
-import Footer from '@/views/HomeTemplate/components/Footer.vue'
 
 const selectedItem = ref(null)
 
@@ -17,10 +10,8 @@ const showDetail = (index) => {
 </script>
 
 <template>
-  <Header />
-  <div class="container mx-auto px-4">
-    <h2 class="text-2xl font-bold mb-6">Kiến thức sức khỏe cộng đồng</h2>
-
+  <!-- <Header /> -->
+  <div class="container mx-auto px-20">
     <!-- List items -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
@@ -58,5 +49,5 @@ const showDetail = (index) => {
     </div>
   </div>
 
-  <Footer />
+  <!-- <Footer /> -->
 </template>

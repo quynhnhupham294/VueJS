@@ -1,8 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import Footer from '../HomeTemplate/components/Footer.vue'
-import Header from '../HomeTemplate/components/Header.vue'
-import router from '@/router'
 import { useRoute } from 'vue-router'
 import { items } from '@/Utils/post'
 
@@ -21,22 +18,20 @@ const addComment = () => {
     email: props.propsEmail,
     comment: inputComment.value,
   })
+  console.log(props.propsEmail)
   inputComment.value = ''
 }
 
 const idPost = route.params.id
 
-const post = items
-
 const postDetail = ref({})
 
-postDetail.value = post.find((item) => item.id === +idPost)
-
-console.log(postDetail.value)
+postDetail.value = items.find((item) => item.id === +idPost)
+// console.log(postDetail.value)
 </script>
 
 <template>
-  <p>Xin chao: {{ propsEmail }}</p>
+  <!-- <p>Xin chao: {{ propsEmail }}</p> -->
   <main class="max-w-7xl mx-auto flex gap-8 pt-4 px-4">
     <!-- Col-8 -->
     <div class="w-2/3 border-2 rounded-lg bg-gray-100 p-4">
@@ -53,7 +48,7 @@ console.log(postDetail.value)
 
     <!-- Col-4 -->
     <div class="w-1/3 border-2 rounded-lg bg-gray-100 p-4">
-      <div>
+      <form>
         <h4 class="text-xl font-semibold mb-3">Bình luận bài viết tại đây</h4>
         <textarea
           v-model="inputComment"
@@ -68,7 +63,7 @@ console.log(postDetail.value)
         >
           Gửi bình luận
         </button>
-      </div>
+      </form>
       <hr class="my-4" />
       <div>
         <h5 class="text-lg font-medium mb-2">Danh sách các bình luận</h5>
